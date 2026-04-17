@@ -1,0 +1,15 @@
+# Core Python packages for Ansible and infrastructure automation
+# RHEL 9 EE still uses Python 3.9, so we use the latest compatible version
+# ansible-core 2.16+ requires Python 3.10+, 2.18+ requires Python 3.11+
+
+ansible-core>=2.15.13,<2.16.0
+requests>=2.31.0
+pyvmomi<8.0.0
+certifi>=2023.7.22
+urllib3>=1.26.18
+cryptography>=41.0.0
+pyopenssl>=23.2.0
+PyYAML>=6.0
+Jinja2>=3.1.2
+hvac>=1.1.0
+python-hcl2>=4.3.0
