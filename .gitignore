@@ -1,7 +1,4 @@
 # Build artifacts
-*.tar
-*.tar.gz
-
 # Container runtime files
 .dockerignore
 
