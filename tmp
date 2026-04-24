@@ -1,0 +1,24 @@
+Section "ServerLayout"
+    Identifier "nvidia-layout"
+    Screen 0 "nvidia-screen"
+    Inactive "vmware-device"
+EndSection
+
+Section "Device"
+    Identifier "nvidia-device"
+    Driver     "nvidia"
+    BusID      "PCI:2:0:0"
+    Option     "AllowEmptyInitialConfiguration" "true"
+    Option     "ConnectedMonitor" "DFP-0, DFP-1, DFP-2, DFP-3"
+    Option     "ModeValidation" "NoVesaModes,NoXserverModes,NoMaxSizeCheck,NoEdidMaxPClkCheck,NoHorizSyncCheck,NoVertRefreshCheck,AllowNonEdidModes"
+EndSection
+
+Section "Screen"
+    Identifier "nvidia-screen"
+    Device     "nvidia-device"
+EndSection
+
+Section "Device"
+    Identifier "vmware-device"
+    Driver     "vmware"
+EndSection
