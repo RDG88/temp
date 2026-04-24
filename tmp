@@ -22,3 +22,13 @@ Section "Device"
     Identifier "vmware-device"
     Driver     "vmware"
 EndSection
+
+
+###
+
+Section "OutputClass"
+    Identifier "nvidia"
+    MatchDriver "nvidia-drm"
+    Driver "nvidia"
+    Option "PrimaryGPU" "yes"
+EndSection
