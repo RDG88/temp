@@ -13,3 +13,4 @@ PyYAML>=6.0
 Jinja2>=3.1.2
 hvac>=1.1.0
 python-hcl2>=4.3.0
+six>=1.16.0  # Required by vmware.ansible_for_nsxt module_utils

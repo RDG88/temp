@@ -10,8 +10,8 @@ ARG INSTALL_COLLECTIONS=true
 
 # Set labels
 LABEL name="ansible-ee-packer" \
-    version="3.3.12" \
-    description="Custom Ansible Execution Environment with Packer 1.14.2, VMware SSL support, sshpass, and Packer plugins" \
+    version="3.4.0" \
+    description="Custom Ansible Execution Environment with Packer 1.14.2, VMware SSL support, NSX-T modules, sshpass, and Packer plugins" \
       maintainer="root" \
     created="2025-09-14T00:00:00Z"
 
@@ -23,6 +23,7 @@ RUN set -eux; \
     if command -v apt-get >/dev/null 2>&1; then \
         apt-get update && apt-get install -y --no-install-recommends \
             curl \
+            git \
             openssh-client \
             sshpass \
             ca-certificates \
@@ -31,14 +32,16 @@ RUN set -eux; \
     elif command -v microdnf >/dev/null 2>&1; then \
         # RHEL 9 with microdnf - skip curl as curl-minimal is already installed
         microdnf install -y --setopt=install_weak_deps=0 --setopt=tsflags=nodocs \
+            git-core \
             openssh-clients \
             sshpass \
             ca-certificates \
             python3-pip \
         && microdnf clean all; \
     elif command -v dnf >/dev/null 2>&1; then \
-        # RHEL with dnf - skip curl as curl-minimal is already installed  
+        # RHEL with dnf - skip curl as curl-minimal is already installed
         dnf -y --setopt=install_weak_deps=0 --setopt=tsflags=nodocs install \
+            git-core \
             openssh-clients \
             sshpass \
             ca-certificates \
@@ -47,6 +50,7 @@ RUN set -eux; \
     elif command -v yum >/dev/null 2>&1; then \
         yum -y --setopt=tsflags=nodocs install \
             curl \
+            git-core \
             openssh-clients \
             sshpass \
             ca-certificates \

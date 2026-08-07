@@ -4,7 +4,7 @@
 set -e
 
 EE_NAME="ansible-ee-packer"
-VERSION="3.3.12"
+VERSION="3.4.0"
 DOCKER_HUB_REGISTRY="${DOCKER_HUB_REGISTRY:-docker.io/degraafit}"
 
 # Colors

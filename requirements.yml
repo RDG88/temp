@@ -8,3 +8,6 @@ collections:
     version: ">=1.5.0"
   - name: community.vmware
     version: ">=4.0.0,<5.0.0"   # Compatible with ansible-core 2.15
+  - name: https://github.com/vmware/ansible-for-nsxt.git
+    type: git
+    version: v3.2.0             # VMware NSX-T modules (vmware.ansible_for_nsxt), latest supported release branch
